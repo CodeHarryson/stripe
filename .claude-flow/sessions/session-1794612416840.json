@@ -1,0 +1,14 @@
+{
+  "id": "session-1794612416840",
+  "startedAt": "2026-11-13T23:26:56.840Z",
+  "cwd": "/Users/codeharryson/Documents/Malik/stripe",
+  "context": {},
+  "metrics": {
+    "edits": 0,
+    "commands": 0,
+    "tasks": 0,
+    "errors": 0
+  },
+  "endedAt": "2026-11-13T23:30:13.914Z",
+  "duration": 197077
+}
