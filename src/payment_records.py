@@ -41,3 +41,9 @@ def summarize_payments(raw: str) -> tuple[dict[str, int], list[str]]:
 
     raise NotImplementedError("Implement during Day 1")
 
+ #`payment_id,customer_id,amount,status`
+# 5 test: normal, empty, repeated customer, failed payment, and tied totals
+normal = "p01,C01,9000,FAILED\np02,C02,9000,SUCCEEDED\np03,C02,50,FAILED\np04,C03,100,SUCCEEDED"
+empty = ""
+
+
