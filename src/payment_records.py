@@ -45,5 +45,8 @@ def summarize_payments(raw: str) -> tuple[dict[str, int], list[str]]:
 # 5 test: normal, empty, repeated customer, failed payment, and tied totals
 normal = "p01,C01,9000,FAILED\np02,C02,9000,SUCCEEDED\np03,C02,50,FAILED\np04,C03,100,SUCCEEDED"
 empty = ""
+repeated = "p01,C01,9000,FAILED\np02,C02,9000,SUCCEEDED\np02,C02,50,FAILED\np02,C03,100,SUCCEEDED"
+failed = "p01,C01,9000,FAILED\np02,C02,9000,FAILED\np03,C02,50,FAILED\np04,C03,100,SUCCEEDED"
+tied = "p01,C01,9000,FAILED\np02,C02,100,SUCCEEDED\np03,C02,50,FAILED\np04,C03,100,SUCCEEDED"
 
 
