@@ -1,7 +1,6 @@
 def chronological(values: list[str]) -> list[str]:
     """Sort non-negative integer timestamp strings by numeric value."""
-    return sorted(values)
-
+    return sorted(values, key=lambda x:int(x))
 
 if __name__ == "__main__":
     # The returned values must remain strings.

@@ -3,7 +3,10 @@ def apply_refund(remaining_cents: int, refund_cents: int) -> int:
 
     Raise ValueError when either amount is invalid.
     """
+    if remaining_cents < 0 or refund_cents <= 0 or refund_cents > remaining_cents:
+        raise ValueError
     return remaining_cents - refund_cents
+
 
 
 if __name__ == "__main__":
