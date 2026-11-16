@@ -1,6 +1,10 @@
-# Day 8 — Weakness repair
+# Day 8 — First scored mock
 
-Choose the two lowest Mock 2 dimensions. Recreate each failure in a smaller example and solve it independently twice. Use `design/EXTENSIBILITY.md` if design was weak and `leetcode/BOUNDARY_DRILLS.md` if index semantics were weak.
+Use `mocks/MOCK_02_DISPUTE_MATCHER.md` under exact interview conditions. Reveal
+the requirement change at minute 20. Stop coding at minute 50 and use the final
+10 minutes for testing and explanation.
 
-Then complete LeetCode 362 (25 minutes). Complete 635 only if the two weakness-repair drills are finished; the mock-derived weaknesses take priority. Use the Stripe follow-ups in `leetcode/STRIPE_STATEFUL_SET.md`.
+Score all eight dimensions in `TRACKER.md`. Identify the two lowest dimensions
+and write one concrete prevention rule for each. Do not add extra problems after
+the mock; the score and failure analysis determine Day 9.
 

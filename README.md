@@ -45,3 +45,11 @@ python3 -m unittest tests.test_payment_records -v
 
 The reported-question material in this repo is pattern-based. It does not claim that any exact question will appear.
 
+## Current highest-priority drill
+
+Recent candidate feedback strengthens the case for a four-part, progressive
+transaction-fee exercise involving CSV parsing, business rules, and debugging
+under time pressure. Start with `schedule/DAY_06.md` and keep all work for that
+session in `stripe_style/transaction_fee_engine.py`. This is representative
+practice, not a guaranteed or leaked interview question.
+
