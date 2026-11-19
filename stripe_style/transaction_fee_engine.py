@@ -63,24 +63,54 @@ Before coding, say aloud
 4. What is the smallest useful test for Part 1?
 """
 
-
+from collections import defaultdict
+from decimal import Decimal, ROUND_HALF_UP
 def calculate_fees(csv_text, rules):
     """Implement incrementally. Do not read a solution before attempting it."""
-    raise NotImplementedError
+    #transaction_id,merchant_id,amount_cents,currency,provider,country,status
+    result = defaultdict(list)
+    total = 0
+
+    for line in csv_text.splitlines()[1:]:
+        if not line.strip():
+            continue
+        fields = line.strip().split(",")
+        print(fields)
+        transaction_id = fields[0]
+        tamount = fields[2]
+        status = fields[6]
+
+        if status in rules:
+            fee_amount = (int(tamount) * rules[status] + 5_000) // 10_000
+            
+            #fees: [(transactionid, feeamount)]
+            total += fee_amount
+            result['fees'].append((transaction_id, fee_amount))
+        else:
+            result['fees'].append((transaction_id, 0))
+    result['total_fee_cents'] = total
+    print(result)
+    return result
+
+
+            
+
 
 
 if __name__ == "__main__":
     # Uncomment only the tests for the part you have revealed.
 
     # PART 1 TESTS
-    # csv_part_1 = """transaction_id,merchant_id,amount_cents,currency,provider,country,status
-    # tx_1,m_1,10000,usd,card,US,succeeded
-    # tx_2,m_2,5050,usd,card,US,succeeded
-    # tx_3,m_1,900,usd,card,US,failed
-    # """
-    # result = calculate_fees(csv_part_1, {"succeeded": 250})
-    # assert result["fees"] == [("tx_1", 250), ("tx_2", 126), ("tx_3", 0)]
-    # assert result["total_fee_cents"] == 376
+    csv_part_1 = """transaction_id,merchant_id,amount_cents,currency,provider,country,status
+    tx_1,m_1,10000,usd,card,US,succeeded
+    tx_2,m_2,5050,usd,card,US,succeeded
+    tx_3,m_1,900,usd,card,US,failed
+    tx_half,m_1,100,usd,card,US,succeeded
+
+    """
+    result = calculate_fees(csv_part_1, {"succeeded": 250})
+    assert result["fees"] == [("tx_1", 250), ("tx_2", 126), ("tx_3", 0), ("tx_half", 3)]
+    assert result["total_fee_cents"] == 379
 
     # PART 2 TESTS
     # rules_part_2 = {
